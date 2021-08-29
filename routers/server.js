@@ -16,6 +16,16 @@ router.post('/addusers', async (req, res) => {
     res.send(e)
   }
 })
+
+router.get('/allUsers', async (req, res) => {
+  try {
+    const getUsers = await userDetails.find()
+    res.send(getUsers)
+  } catch (e) {
+    res.send(e)
+  }
+})
+
 router.get('/allUsers', async (req, res) => {
   try {
     const getUsers = await userDetails.find()
